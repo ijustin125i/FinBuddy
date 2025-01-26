@@ -1,6 +1,20 @@
-import TourDetailScreen from "./screens/TourDetailScreen";
-import TOURS from "./config/TOURS";
+import React from "react";
+import { NavigationContainer } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
+import FinancialAdvisingScreen from "./screens/FinancialAdvisors";
+
+const Stack = createStackNavigator();
 
 export default function App() {
-  return <TourDetailScreen tour={TOURS[3]} />;
+  return (
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="FinancialAdvisingScreen">
+      <Stack.Screen
+          name="FinancialAdvisingScreen"
+          component={FinancialAdvisingScreen}
+          options={{ title: "Households" }}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
 }
